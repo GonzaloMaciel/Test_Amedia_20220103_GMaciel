@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Test_Amedia_20220103_GMaciel.Models.TUser>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>User List</h1>
+
+<p style="text-align:right;margin-right:20px;">
+    <a class="btn btn-outline-primary" asp-action="AddOrEdit">Create New</a>
+</p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CodUsuario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TxtUser)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TxtPassword)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TxtNombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TxtApellido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NroDoc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CodRol)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SnActivo)
+                </th>
+                <th></th>
+                <th>Edit Action</th>
+                <th>Details Action</th>
+                <th>Delete Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TxtUser)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TxtPassword)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TxtNombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TxtApellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NroDoc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodRol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SnActivo)
+                </td>
+                <td>
+                <td class="text-center">
+                    <a asp-action="AddOrEdit" class="btn btn-outline-primary" asp-route-codUsuario="@item.CodUsuario">Edit</a>
+                </td>
+                <td class="text-center">
+                    <a asp-action="Details" class="btn btn-outline-info" asp-route-codUsuario="@item.CodUsuario">Details</a>
+                </td>
+                <td class="text-center">
+                    <a asp-action="Delete" class="btn btn-outline-danger" asp-route-codUsuario="@item.CodUsuario">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

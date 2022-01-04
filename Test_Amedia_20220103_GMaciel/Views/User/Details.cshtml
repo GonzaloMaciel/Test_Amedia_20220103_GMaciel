@@ -1,0 +1,64 @@
+﻿@model Test_Amedia_20220103_GMaciel.Models.TUser
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-3 my-3 border">
+    <h1>User Details</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.CodUsuario)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CodUsuario)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.TxtUser)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TxtUser)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.TxtPassword)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TxtPassword)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.TxtNombre)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TxtNombre)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.TxtApellido)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TxtApellido)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.NroDoc)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.NroDoc)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.CodRol)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CodRol)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.SnActivo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.SnActivo)
+        </dd>
+    </dl>
+    <div>
+        <a class="btn btn-primary" asp-action="AddOrEdit" asp-route-codUsuario="@Model.CodUsuario">Edit</a>
+        <a class="btn btn-danger" asp-action="Index">Back</a>
+    </div>
+</div>
